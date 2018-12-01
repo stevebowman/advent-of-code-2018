@@ -10,6 +10,4 @@ let parseDay1Part1 input =
             printfn "Failure: %s" errorMsg
             []
 
-let day1Part1 input = 
-    let data = parseDay1Part1 input
-    List.sum data
+let day1Part1 input = parseDay1Part1 input |> List.sum
