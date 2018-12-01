@@ -8,7 +8,8 @@ open Day1
 let main argv =
     printfn "Advent Of Code 2018"
 
-    timeAndPrintResult day1Part1 10 "Day 1 Part 1"
+    let day1Part1Input = readFile "Input/Day1Part1.txt"
+    timeAndPrintResult day1Part1 day1Part1Input "Day 1 Part 1"
 
     Console.ReadKey() |> ignore
 

@@ -9,10 +9,16 @@
     <Compile Include="Utils.fs" />
     <Compile Include="Solutions\Day1.fs" />
     <Compile Include="Tests\Day1Tests.fs" />
+    <Content Include="Input\Day1Part1.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Compile Include="Program.fs" />
   </ItemGroup>
 
+  <ItemGroup />
+
   <ItemGroup>
+    <PackageReference Include="FParsec" Version="1.0.4-RC3" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.9.0" />
     <PackageReference Include="NUnit" Version="3.11.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.11.2" />

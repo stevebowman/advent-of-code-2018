@@ -16,3 +16,5 @@ let timeAndPrintResult f input title =
     let result, time = timeThis f input
     (result, time, title) |||> printResult
 
+let readFile fileName =
+    System.IO.File.ReadAllText(fileName)
