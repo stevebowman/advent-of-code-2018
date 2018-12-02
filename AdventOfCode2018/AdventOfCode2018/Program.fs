@@ -3,6 +3,7 @@
 open System
 open Utils
 open Day1
+open Day2
 
 [<EntryPoint>]
 let main argv =
@@ -18,6 +19,10 @@ let main argv =
             let day1Part1Input = readFile "Input/Day1Part1.txt"
             timeAndPrintResult day1Part1 day1Part1Input "Day 1 Part 1"
             timeAndPrintResult day1Part2 day1Part1Input "Day 1 Part 2"
+        
+        | "2" ->
+            let day2Input = readFile "Input/Day2.txt"
+            timeAndPrintResult day2Part1 day2Input "Day 2 Part 1"
     
         | "q" | "Q" -> exit 0
 
