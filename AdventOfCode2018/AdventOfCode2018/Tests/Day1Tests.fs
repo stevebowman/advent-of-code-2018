@@ -1,6 +1,7 @@
 ﻿module Day1Tests
 
 open NUnit.Framework
+open Utils
 open Day1
 
 [<TestFixture>]
@@ -13,6 +14,12 @@ type ``Day 1 Part 1``() =
     member this.``can process sample input``(input, expected) =
         let result = day1Part1 input
         Assert.AreEqual(expected, result) 
+    
+    [<Test>]
+    member this.``can process puzzle input``() =
+        let day1Input = readFile "Input/Day1.txt"
+        let result = day1Part1 day1Input
+        Assert.AreEqual(466, result)
 
 [<TestFixture>]
 type ``Day 1 Part 2``() =
@@ -25,3 +32,9 @@ type ``Day 1 Part 2``() =
     member this.``can process sample input``(input, expected) =
         let result = day1Part2 input
         Assert.AreEqual(expected, result) 
+
+    [<Test>]
+    member this.``can process puzzle input``() =
+        let day1Input = readFile "Input/Day1.txt"
+        let result = day1Part2 day1Input
+        Assert.AreEqual(750, result)
