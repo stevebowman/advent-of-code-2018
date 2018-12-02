@@ -9,7 +9,6 @@ type ``Day 2 Part 1``() =
 
     [<Test>]
     member this.``can process sample input``() =
-
         let input = "abcdef\nbababc\nabbcde\nabcccd\naabcdd\nabcdee\nababab"
         let result = day2Part1 input
         Assert.AreEqual(12, result) 
@@ -25,7 +24,6 @@ type ``Day 2 Part 2``() =
 
     [<Test>]
     member this.``can process sample input``() =
-
         let input = "abcde\nfghij\nklmno\npqrst\nfguij\naxcye\nwvxyz"
         let result = day2Part2 input
         Assert.AreEqual("fgij", result) 
