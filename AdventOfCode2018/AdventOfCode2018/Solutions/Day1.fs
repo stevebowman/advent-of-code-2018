@@ -13,7 +13,7 @@ let day1Part2 input =
     // and then appending to it each time.
     let alreadySeenSums = new System.Collections.Generic.List<int>()
 
-    let isAlreadySeen (value:int) =
+    let isAlreadySeen value =
         if alreadySeenSums.Contains(value) then Some(value)
         else
             alreadySeenSums.Add(value)
