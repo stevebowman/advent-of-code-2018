@@ -2,6 +2,8 @@
 
 open Parsers
 
+let parseDay2Input input = parseListOfStrings input '\n'
+
 // Do a count of each letter in the string, get just the counts and see if what we
 // are looking for is in there.
 let hasCount target string =
@@ -30,11 +32,11 @@ let hasOnlyOneCharDifference string1 string2 =
         None
 
 let day2Part1 input =
-    let data = parseListOfStrings input '\n'
+    let data = parseDay2Input input
     let twos = List.fold (fun acc elem -> acc + System.Convert.ToInt32(hasCount 2 elem)) 0 data
     let threes = List.fold (fun acc elem -> acc + System.Convert.ToInt32(hasCount 3 elem)) 0 data
     twos * threes
 
 let day2Part2 input =
-    let data = parseListOfStrings input '\n'
+    let data = parseDay2Input input
     List.tryPick (fun x -> List.tryPick (fun y -> hasOnlyOneCharDifference x y) data) data |> Option.get
