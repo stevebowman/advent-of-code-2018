@@ -18,3 +18,7 @@ let timeAndPrintResult f input title =
 
 let readFile fileName =
     System.IO.File.ReadAllText(fileName)
+
+let rec repeat items = 
+  seq { yield! items  
+        yield! repeat items }
