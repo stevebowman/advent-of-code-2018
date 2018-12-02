@@ -16,9 +16,9 @@ let main argv =
 
         match Console.ReadLine().Trim() with
         | "1" ->
-            let day1Part1Input = readFile "Input/Day1Part1.txt"
-            timeAndPrintResult day1Part1 day1Part1Input "Day 1 Part 1"
-            timeAndPrintResult day1Part2 day1Part1Input "Day 1 Part 2"
+            let day1Input = readFile "Input/Day1.txt"
+            timeAndPrintResult day1Part1 day1Input "Day 1 Part 1"
+            timeAndPrintResult day1Part2 day1Input "Day 1 Part 2"
         
         | "2" ->
             let day2Input = readFile "Input/Day2.txt"

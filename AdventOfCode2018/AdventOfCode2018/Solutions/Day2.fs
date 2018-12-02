@@ -1,7 +1,9 @@
 ﻿module Day2
 
 open Parsers
-    
+
+// Do a count of each letter in the string, get just the counts and see if what we
+// are looking for is in there.
 let hasCount target string =
     Seq.toList string
     |> List.countBy (fun a -> a) 
