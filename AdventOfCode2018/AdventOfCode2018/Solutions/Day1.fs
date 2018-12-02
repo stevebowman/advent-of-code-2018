@@ -1,24 +1,9 @@
 ﻿module Day1
 
-open FParsec
+open Parsers
 open Utils
 
-let parseDay1Part1 input =
-    let listOfIntsParser = (sepBy pint32 (pchar('\n')))
-    match run listOfIntsParser input with
-        | Success(result, _, _)   -> result
-        | Failure(errorMsg, _, _) -> 
-            printfn "Failure: %s" errorMsg
-            []
-
-let day1Part1 input = parseDay1Part1 input |> List.sum
-
-let day1Part2 input =
-
-    // Create an infinite sequence to work on by repeating the input, then generate a 
-    // sequence of the running sum values.
-    let data = repeat (parseDay1Part1 input)
-    let sums = Seq.scan (fun sum current -> sum + current) 0 data
+let findRepeat sequence =
 
     // TODO - horrible brute force solution needs rewriting:
 
@@ -28,7 +13,7 @@ let day1Part2 input =
     let mutable repeatValue = 0
 
     while repeatFound = false do
-        let current = Seq.item index sums
+        let current = Seq.item index sequence
         if List.contains current alreadySeen then 
             repeatValue <- current
             repeatFound <- true
@@ -38,4 +23,16 @@ let day1Part2 input =
 
     repeatValue
 
+let parseDay1Input input = parseListOfInts input '\n'
 
+let day1Part1 input = input |> parseDay1Input |> List.sum
+
+let day1Part2 input =
+
+    // Create an infinite sequence to work on by repeating the input, then generate a 
+    // sequence of the running sum values.
+    input
+    |> parseDay1Input
+    |> repeat
+    |> Seq.scan (fun sum current -> sum + current) 0 
+    |> findRepeat

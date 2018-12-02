@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <Compile Include="Utils.fs" />
+    <Compile Include="Parsers.fs" />
     <Compile Include="Solutions\Day1.fs" />
     <Compile Include="Tests\Day1Tests.fs" />
     <Content Include="Input\Day1Part1.txt">
