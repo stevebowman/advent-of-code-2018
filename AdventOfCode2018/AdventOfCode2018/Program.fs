@@ -23,6 +23,7 @@ let main argv =
         | "2" ->
             let day2Input = readFile "Input/Day2.txt"
             timeAndPrintResult day2Part1 day2Input "Day 2 Part 1"
+            timeAndPrintResult day2Part2 day2Input "Day 2 Part 2"
     
         | "q" | "Q" -> exit 0
 

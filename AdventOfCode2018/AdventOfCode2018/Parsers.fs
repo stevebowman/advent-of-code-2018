@@ -22,3 +22,11 @@ let parseListOfStrings input separator =
         | Failure(errorMsg, _, _) -> 
             printfn "Failure: %s" errorMsg
             []
+
+let parseStringOfChars input = 
+    let parser = many anyChar
+    match run parser input with
+        | Success(result, _, _)   -> result
+        | Failure(errorMsg, _, _) -> 
+            printfn "Failure: %s" errorMsg
+            []
