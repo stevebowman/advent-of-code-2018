@@ -10,7 +10,8 @@ let runParser parser input =
             []
 
 let parseListOfInts input separator =
-    let parser = (sepBy pint32 (pchar(separator)))
+    let sep = pchar separator
+    let parser = sepBy pint32 sep
     runParser parser input
 
 let parseListOfStrings input separator =
