@@ -14,7 +14,8 @@ let day1Part2 input =
     let alreadySeenSums = new System.Collections.Generic.List<int>()
 
     let isAlreadySeen value =
-        if alreadySeenSums.Contains(value) then Some(value)
+        if alreadySeenSums.Contains(value) then 
+            Some(value)
         else
             alreadySeenSums.Add(value)
             None
